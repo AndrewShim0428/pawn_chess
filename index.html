@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pawn Wars Chess</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Pawn Wars</h1>
+      <p class="subtitle">Promote your pawns by defeating enemies</p>
+    </header>
+
+    <div id="main-layout">
+      <!-- Left panel: Black's info -->
+      <aside id="panel-black" class="side-panel">
+        <div class="player-label black-label">Black</div>
+        <div class="captures-label">Captured:</div>
+        <div id="captured-by-black" class="captured-pieces"></div>
+        <div id="promotion-log-black" class="promotion-log"></div>
+      </aside>
+
+      <!-- Board -->
+      <div id="board-wrapper">
+        <div id="rank-labels-left" class="rank-labels">
+          <span>8</span><span>7</span><span>6</span><span>5</span>
+          <span>4</span><span>3</span><span>2</span><span>1</span>
+        </div>
+        <div id="board"></div>
+        <div id="rank-labels-right" class="rank-labels">
+          <span>8</span><span>7</span><span>6</span><span>5</span>
+          <span>4</span><span>3</span><span>2</span><span>1</span>
+        </div>
+        <div id="file-labels" class="file-labels">
+          <span>a</span><span>b</span><span>c</span><span>d</span>
+          <span>e</span><span>f</span><span>g</span><span>h</span>
+        </div>
+      </div>
+
+      <!-- Right panel: White's info -->
+      <aside id="panel-white" class="side-panel">
+        <div class="player-label white-label">White</div>
+        <div class="captures-label">Captured:</div>
+        <div id="captured-by-white" class="captured-pieces"></div>
+        <div id="promotion-log-white" class="promotion-log"></div>
+      </aside>
+    </div>
+
+    <!-- Status bar -->
+    <div id="status-bar">
+      <div id="turn-indicator">White's Turn</div>
+      <div id="check-indicator" class="hidden">Check!</div>
+    </div>
+
+    <!-- Promotion chain legend -->
+    <div id="legend">
+      <span class="legend-title">Promotion chain:</span>
+      <span class="legend-item">Pawn</span>
+      <span class="legend-arrow">→ 1 kill →</span>
+      <span class="legend-item">Knight</span>
+      <span class="legend-arrow">→ 1 kill →</span>
+      <span class="legend-item">Bishop</span>
+      <span class="legend-arrow">→ 1 kill →</span>
+      <span class="legend-item">Rook</span>
+      <span class="legend-arrow">→ 1 kill →</span>
+      <span class="legend-item">Queen</span>
+    </div>
+  </div>
+
+  <!-- Game Over Overlay -->
+  <div id="overlay" class="hidden">
+    <div id="overlay-box">
+      <div id="overlay-title"></div>
+      <div id="overlay-message"></div>
+      <button id="restart-btn">Play Again</button>
+    </div>
+  </div>
+
+  <script src="chess.js"></script>
+</body>
+</html>
